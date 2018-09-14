@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
+  <van-row class="juz">
+  <van-col class="van-ellipsis" span="8">span: 8</van-col>
+  <van-col span="8" >span: 8</van-col>
+  <van-col span="8">span: 8</van-col>
+</van-row>
+<van-cell-group>
+  <van-cell title="单元格" value="内容" />
+  <van-cell title="单元格" value="内容" label="描述信息" border="{{ false }}" />
+  <van-cell title="单元格" value="内容" />
+  <van-cell title="单元格" value="内容" label="描述信息" border="{{ false }}" />
+    <van-cell value="内容" border="{{ false }}" />
+      <van-cell title="单元格" icon="location" border="{{ false }}" />
+</van-cell-group>
+<van-slider value="50" bind:change="onChange" />
